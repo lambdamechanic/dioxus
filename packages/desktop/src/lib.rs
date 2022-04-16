@@ -196,7 +196,7 @@ pub fn launch_with_props<P: 'static + Send>(
                     )
                 } else {
                     // in debug, we are okay with the reload menu showing and dev tool
-                    webview = webview.with_dev_tool(true);
+                    // webview = webview.with_dev_tool(true);
                 }
 
                 desktop.webviews.insert(window_id, webview.build().unwrap());

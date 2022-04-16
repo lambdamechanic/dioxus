@@ -191,7 +191,9 @@ pub(super) fn handler(
         SetTitle(content) => window.set_title(&content),
         SetDecorations(state) => window.set_decorations(state),
 
-        DevTool => webview.devtool(),
+        DevTool => {
+            // webview.devtool()
+        },
 
         Eval(code) => webview
             .evaluate_script(code.as_str())
