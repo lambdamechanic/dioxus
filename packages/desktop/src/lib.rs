@@ -151,9 +151,9 @@ pub fn launch_with_props<P: 'static + Send>(
                                     if let Some(temp) = data.as_object() {
                                         if temp.contains_key("href") {
                                             let url = temp.get("href").unwrap().as_str().unwrap();
-                                            if let Err(e) = webbrowser::open(url) {
-                                                log::error!("Open Browser error: {:?}", e);
-                                            }
+                                            // if let Err(e) = webbrowser::open(url) {
+                                            //     log::error!("Open Browser error: {:?}", e);
+                                            // }
                                         }
                                     }
                                 }
