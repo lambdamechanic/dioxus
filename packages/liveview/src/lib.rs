@@ -42,7 +42,7 @@ impl Liveview {
   <body>
     <div id="main"></div>
     <script>
-      var WS_ADDR = "ws://{addr}/app";
+      var WS_ADDR = "{addr}/app";
       {interpreter}
       main();
     </script>
@@ -51,6 +51,15 @@ impl Liveview {
             addr = self.addr,
             interpreter = include_str!("../src/interpreter.js")
         )
+    }
+}
+
+// this is a pretty terrible hack, prrobably there's some much smarter
+// way to do this.
+pub fn new_wss(addr: String) -> Liveview {
+    Liveview {
+        pool: LocalPoolHandle::new(16),
+        addr: addr,
     }
 }
 
